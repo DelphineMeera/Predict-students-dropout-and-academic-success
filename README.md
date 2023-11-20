@@ -195,7 +195,96 @@ The following are the KPIs that are used to find the measure of success:
 1.	Accuracy of Predictions: Evaluate how well the model accurately classifies students into categories such as dropout, enrolled or graduate.
 2.	Precision: Assess the model’s ability to correctly identify students who're at risk without generating many false positive results.
 3.	Recall: Evaluate the model’s effectiveness in identifying all students who are at risk without generating many false negative results.
-4.	Metrics for Addressing Class Imbalance: Utilize metrics like F1 score, which consider both precision and recall tackling the challenges posed by imbalanced class distributions.
+4.	Metrics for Addressing Class Imbalance: Utilize metrics like F1 score, which consider both precision and recall tackling the challenges posed by imbalanced class distributios.
+
+# PROJECT DELIVERABLE 2
+
+## S3 Data Storage:
+Create an S3 bucket to store the dataset(s).
+Upload data to the S3 Bucket.
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/1%20-%20S3%20Data%20storage/Picture1.png)
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/1%20-%20S3%20Data%20storage/Picture2.png)
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/1%20-%20S3%20Data%20storage/Picture3.png)
+
+## Data Exploration for Insight and Pre-processing:
+Use Amazon Athena to query the transformed data.
+Use SQL queries for meaningful insights from the dataset for data exploration
+Create visualizations using Amazon QuickSight.
+The descriptions to the insights are mentioned below the insights:
+
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/2%20-%20Data%20exploration/Picture1.png)
+
+Gender and Count of Target
+
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/2%20-%20Data%20exploration/Picture2.png)
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/2%20-%20Data%20exploration/Picture3.png)
+
+Distribution of graduate,dropout and enrolled students in each gender.
+
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/2%20-%20Data%20exploration/Picture4.png)
+
+Age of enrollment of students in the dataset.
+
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/2%20-%20Data%20exploration/Picture5.png)
+
+Distribution of age of students enrolled with respect to dropout, enrolled and graduate value.
+
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/2%20-%20Data%20exploration/Picture6.png)
+
+Distribution of male and female students with respect to their target value (Dropout, pass, fail)
+
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/2%20-%20Data%20exploration/Picture7.png)
+
+Distribution of students with respect to their marital status and their target value(Dropout, pass, fail)
+
+## Running Queries using Amazon Athena:
+
+Total records: 
+
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/3%20-%20Running%20Queries/Picture1.png)
+
+Dropout as per gender:
+
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/3%20-%20Running%20Queries/Picture2.png)
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/3%20-%20Running%20Queries/Picture3.png)
+
+Dropout as per Marital Status:
+
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/3%20-%20Running%20Queries/Picture4.png)
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/3%20-%20Running%20Queries/Picture5.png)
+
+Dropout according to Mother’s occupation:
+
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/3%20-%20Running%20Queries/Picture6.png)
+
+Dropout as per Age of enrollment:
+
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/3%20-%20Running%20Queries/Picture7.png)
+
+## AWS Glue ETL Job:
+
+Create an ETL job using AWS Glue to transform the dataset(s) in S3
+Perform basic data transformations (e.g., filtering, aggregation, type conversions)
+
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/4%20-%20Glue%20ETL/Picture1.png)
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/4%20-%20Glue%20ETL/Picture2.png)
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/4%20-%20Glue%20ETL/Picture3.png)
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/4%20-%20Glue%20ETL/Picture4.png)
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/4%20-%20Glue%20ETL/Picture5.png)
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/4%20-%20Glue%20ETL/Picture6.png)
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/4%20-%20Glue%20ETL/Picture7.png)
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/4%20-%20Glue%20ETL/Picture8.png)
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/4%20-%20Glue%20ETL/Picture9.png)
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/4%20-%20Glue%20ETL/Picture10.png)
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/4%20-%20Glue%20ETL/Picture11.png)
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/4%20-%20Glue%20ETL/Picture12.png)
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/4%20-%20Glue%20ETL/Picture13.png)
+
+## AWS Pipeline:
+
+![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/5%20-%20Pipeline/Picture1.png)
+
+
 
 
 
