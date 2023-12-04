@@ -284,7 +284,102 @@ Perform basic data transformations (e.g., filtering, aggregation, type conversio
 
 ![alt text](https://github.com/DelphineMeera/Predict-students-dropout-and-academic-success/blob/main/Screenshots/5%20-%20Pipeline/Picture1.png)
 
+# PROJECT DELIVERABLE 3
+
+## Machine Learning Frameworks
+
+Below are the list of tools used in this project
+ * Amazon Sagemaker
+ * Amazon S3 buckets
+ * TensorFlow
+ * Scikit-Learn
 
 
+### Develop and Train models: 
+
+#### Data Pre-processing:
+* Ensured data cleanliness, accurate labeling, and representation of real-world scenarios
+* Encoded categorical variables
+#### Data Partitioning:
+* Split the data into training, testing, and validation sets
+#### Data Analysis:
+* Plotted a heatmap to understand the correlation between features
+#### Model Construction Techniques:
+* Neural Network model with Simple Dense Layers
+* Random Forest Classification model
+* Logistic Regression
+
+## Data Pre-processing
+
+### Neural Network model with Simple Dense Layers
+
+* The data was split into 80% training, 10% validation, and 10% testing sets.
+* We used a ‘Sequential’ model – First Layer: Dense layer with 128 neurons, Second Layer: Dense layer with 64 neurons, Third Layer: Dense layer with 32 neurons, all using ReLU activation.
+* Output Layer is a Dense layer with 3 neurons (for 3 classes) using Softmax activation, which is suitable for multi-class classification.
+* Compiling the Model:
+   * Optimizer: Stochastic Gradient Descent (SGD) with a learning rate of 0.01.
+   * Loss Function: ‘sparse_categorical_crossentropy’, appropriate for classification with integer targets (labels).
+   * We used the ‘accuracy’ metric, to evaluate the performance of the model during training and testing.
+* Training the Model:
+   * Training Process: Model trained on scaled training data (X_train_scaled).
+   * Validation Data: Uses scaled validation data (X_val_scaled, y_val) for evaluation during training.
+   * Number of epochs on the training dataset is 30.
+   * Batch Size: Number of samples processed before the model is updated, set to 32.
+ 
+
+### Logistic Regression
+
+* Initially, we have taken the dataset into a dataframe and then started with the preprocessing for the logistic regression model.
+* We have divided the dataset into two parts, training and validation sets of sizes 80 and 20 percent respectively.
+* Later, we have dropped the rows which belong to the enrolled target variable ,which we are not going to use for our model to predict if a student drops out or not.
+* Then, we have applied feature extraction over all the features by selecting a few out of the bunch given to us from the dataset.
+* From the selected features, which were selected by considering the correlation matrix of all the features as well as the target variable, we convert the nominal data given in an ordinal format into one hot 
+  encoding.
+* This adds additional columns to the model which converts a feature ex. Country to multiple columns of countries signifying 1 and 0 for a student to coming from their country and 0 for not (Course feature as 
+  well).
+* Then we apply a scalar transformation function over the dataset to flat out the values of all the features to represent a proportionate amount in the values.
+* Now, we will fit the model over the training data and test it over the test set about which we are going to discuss in the evaluation section
+
+
+
+## Evaluation and Validation 
+
+### Neural Network model with Simple Dense Layers
+   * Training and Validation Loss:
+      * The training loss decreases sharply and then plateaus, showing the model is learning effectively from the training data.
+   * Training and Validation Accuracy:
+      * The training accuracy increases consistently, indicating learning over time.
+      * The validation accuracy also increases reaching 78.28%, but with some fluctuations, suggesting that the model may not generalize as well to new data.
+   * On testing dataset, model achieves an accuracy of 73.81%
+
+### Logistic regression model 
+	 
+* The logistic regression model initially performed for an accuracy 88.1% which needed hyperparameter tuning to increase the accuracy.
+* Here, the confusion matrix has been visualized in the pictures below.
+* Along with it, precision, recall f1-scores of the base model have been put as well.
+* The number of observations belonging to the classes True positive,True negative,  False positive as well as False negative have been listed.
+* The ROC-curve has been visualized as well in the pictures below.
+* We have obtained an ROC- curve area of 0.87.
+* From the confusion matrix heatmap, we can see that the majority of the observations have been correctly classified in the True positive and the True negative classes. With other two classes having 
+  significantly less observations, i.e, False positive as well as false negative classes.
+
+## Hyperparameter Tuning
+
+#### Random Forest Classifier:
+
+* The Random Forest model is used to perform classification on the dataset which requires hyperparameter tuning to get higher accuracy.
+* The tuning is done using RandomizedSearchCV because it is a randomized search over a specified parameter distribution which works better for this model.
+* After performing hyperparameter tuning the accuracy increased to 91.05%.
+
+#### Logistic regression model:
+
+* The logistic regression model initially performed for an accuracy 88.1% which needed hyperparameter tuning to increase the accuracy.
+* The GridSearchCV from AWS is used for logistic regression because it performs an exhaustive search over all possible combinations of hyperparameters to find the best combination.
+* After performing hyperparameter tuning the accuracy increased to 91.71%.
+* Below all the steps taken to achieve this have been shown below.
+
+## Conclusion
+
+As we explored different approaches to our project like using Simple Dense layers and Logistic regression, Logistic regression got more accuracy of 88.1%.After hyperparameter tuning it increased to 91%. Logistic regression is computationally less intensive compared to training neural networks, especially deep neural networks. If we have limited resources, logistic regression may be a more practical choice.
 
 
